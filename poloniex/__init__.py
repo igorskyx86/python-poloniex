@@ -719,7 +719,7 @@ class PoloniexSocketed(Poloniex):
             if 'sub' in self.channels[chan] and self.channels[chan]['sub']:
                 self.subscribe(chan)
 
-    def on_message(self, data):
+    def on_message(self, app, data):
         if not self.jsonNums:
             message = _loads(data, parse_float=str)
         else:
